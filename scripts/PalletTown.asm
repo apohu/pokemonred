@@ -154,6 +154,7 @@ PalletTown_TextPointers:
 	dw_const PalletTownOakText,              TEXT_PALLETTOWN_OAK
 	dw_const PalletTownGirlText,             TEXT_PALLETTOWN_GIRL
 	dw_const PalletTownFisherText,           TEXT_PALLETTOWN_FISHER
+	dw_const PalletTownYoungsterText,        TEXT_PALLETTOWN_YOUNGSTER
 	dw_const PalletTownOaksLabSignText,      TEXT_PALLETTOWN_OAKSLAB_SIGN
 	dw_const PalletTownSignText,             TEXT_PALLETTOWN_SIGN
 	dw_const PalletTownPlayersHouseSignText, TEXT_PALLETTOWN_PLAYERSHOUSE_SIGN
@@ -213,4 +214,34 @@ PalletTownPlayersHouseSignText:
 
 PalletTownRivalsHouseSignText:
 	text_far _PalletTownRivalsHouseSignText
+	text_end
+
+PalletTownTrainerHeaders:
+	def_trainers
+PalletTownTrainerHeader0:
+	trainer EVENT_BEAT_PALLET_TRAINER_0, 1, PalletTownYoungsterBattleText, PalletTownYoungsterEndBattleText, PalletTownYoungsterAfterBattleText
+	db -1 ; end
+
+PalletTownYoungsterText:
+	text_asm
+	CheckEvent EVENT_BEAT_PALLET_TRAINER_0
+	jr nz, .already_beaten
+	ld hl, PalletTownTrainerHeader0
+	call TalkToTrainer
+	jp TextScriptEnd
+.already_beaten
+	ld hl, PalletTownYoungsterAfterBattleText
+	call PrintText
+	jp TextScriptEnd
+
+PalletTownYoungsterBattleText:
+	text_far _PalletTownYoungsterBattleText
+	text_end
+
+PalletTownYoungsterEndBattleText:
+	text_far _PalletTownYoungsterEndBattleText
+	text_end
+
+PalletTownYoungsterAfterBattleText:
+	text_far _PalletTownYoungsterAfterBattleText
 	text_end

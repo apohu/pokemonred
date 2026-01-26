@@ -54,3 +54,15 @@ _PalletTownPlayersHouseSignText::
 _PalletTownRivalsHouseSignText::
 	text "<RIVAL>'s house "
 	done
+
+_PalletTownYoungsterBattleText::
+	text "Pret à te battre?"
+	done
+
+_PalletTownYoungsterEndBattleText::
+	text "Argh! Battu!"
+	prompt
+
+_PalletTownYoungsterAfterBattleText::
+	text "Tu es trop fort!"
+	done

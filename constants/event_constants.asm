@@ -20,9 +20,11 @@
 	const EVENT_GOT_POKEDEX
 	const EVENT_PALLET_AFTER_GETTING_POKEBALLS_2
 	const EVENT_OAK_APPEARED_IN_PALLET
+	const_skip 1
+	const EVENT_BEAT_PALLET_TRAINER_0
 
 ; Viridian City events
-	const_next $28
+	const_next $30
 	const EVENT_VIRIDIAN_GYM_OPEN
 	const EVENT_GOT_TM42
 	const_skip 14
