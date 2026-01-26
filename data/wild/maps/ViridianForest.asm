@@ -1,5 +1,6 @@
 ViridianForestWildMons:
 	def_grass_wildmons 8 ; encounter rate
+<<<<<<< Updated upstream
 IF DEF(_RED)
 	db  4, WEEDLE
 	db  5, KAKUNA
@@ -22,6 +23,20 @@ IF DEF(_BLUE)
 ENDC
 	db  3, PIKACHU
 	db  5, PIKACHU
+=======
+	db  3, WEEDLE
+	db  3, CATERPIE
+	db  4, WEEDLE
+	db  4, WEEDLE
+	db  4, CATERPIE
+	db  4, CATERPIE
+	db  5, PIDGEY
+	db  7, PIDGEY
+	db  7, METAPOD
+	db  7, KAKUNA
+	db  5, PIKACHU
+	db  7, PIKACHU
+>>>>>>> Stashed changes
 	end_grass_wildmons
 
 	def_water_wildmons 0 ; encounter rate

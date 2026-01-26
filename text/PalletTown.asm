@@ -53,6 +53,7 @@ _PalletTownPlayersHouseSignText::
 
 _PalletTownRivalsHouseSignText::
 	text "<RIVAL>'s house "
+<<<<<<< Updated upstream
 	done
 
 _PalletTownYoungsterBattleText::
@@ -65,4 +66,6 @@ _PalletTownYoungsterEndBattleText::
 
 _PalletTownYoungsterAfterBattleText::
 	text "Tu es trop fort!"
+=======
+>>>>>>> Stashed changes
 	done
