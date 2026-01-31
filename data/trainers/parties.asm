@@ -404,7 +404,9 @@ BeautyData:
 	db 29, STARYU, STARYU, STARYU, 0
 ; Route 20
 	db 30, SEADRA, HORSEA, SEADRA, 0
-
+; ViridianForest
+	db 3, JYNX, 0
+	db 4, SHELLDER, 0
 PsychicData:
 ; Saffron Gym
 	db 31, KADABRA, SLOWPOKE, MR_MIME, KADABRA, 0
@@ -605,6 +607,8 @@ RocketData:
 ; Silph Co. 11F
 	db 25, RATTATA, RATTATA, ZUBAT, RATTATA, EKANS, 0
 	db 32, CUBONE, DROWZEE, MAROWAK, 0
+; Viridian Forest
+	db 5, MR_MIME, 0; 41
 
 CooltrainerMData:
 ; Viridian Gym

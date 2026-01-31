@@ -234,10 +234,10 @@ DisplayNamingScreen:
 	ld [wNamingScreenLetter], a
 	call CalcStringLength
 	ld a, [wNamingScreenLetter]
-	cp 'ﾞ'
+	cp $e5 ; dakuten (Japanese, unused in FR)
 	ld de, Dakutens
 	jr z, .dakutensAndHandakutens
-	cp 'ﾟ'
+	cp $e4 ; handakuten (Japanese, unused in FR)
 	ld de, Handakutens
 	jr z, .dakutensAndHandakutens
 	ld a, [wNamingScreenType]
@@ -473,7 +473,7 @@ PrintNamingText:
 	call PlaceString
 	ld hl, $1
 	add hl, bc
-	ld [hl], 'の' ; leftover from Japanese version; blank tile $c9 in English
+	ld [hl], $c9 ; leftover from Japanese version; blank tile in English/French
 	hlcoord 1, 3
 	ld de, NicknameTextString
 	jr .placeString

@@ -56,7 +56,7 @@ _PalletTownRivalsHouseSignText::
 	done
 
 _PalletTownYoungsterBattleText::
-	text "Pret à te battre?"
+	text "Pret a te battre?"
 	done
 
 _PalletTownYoungsterEndBattleText::
