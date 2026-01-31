@@ -518,14 +518,14 @@ ShowPokedexDataInternal:
 	hlcoord 12, 6
 	lb bc, 1, 2
 	call PrintNumber ; print feet (height)
-	ld a, '′'
+	ld a, "<DOT>"
 	ld [hl], a
 	inc de
-	inc de ; de = address of inches (height)
+	inc de ; de = address of decimeters (height)
 	hlcoord 15, 6
 	lb bc, LEADING_ZEROES | 1, 2
-	call PrintNumber ; print inches (height)
-	ld a, '″'
+	call PrintNumber ; print decimeters (height)
+	ld a, "<M>"
 	ld [hl], a
 ; now print the weight (note that weight is stored in tenths of pounds internally)
 	inc de
@@ -590,8 +590,8 @@ ShowPokedexDataInternal:
 	ret
 
 HeightWeightText:
-	db   "HT  ?′??″"
-	next "WT   ???lb@"
+	db   "TAI  ???<M>"
+	next "PDS  ???<K><G>@"
 
 ; leftover from JPN Pokedex, where species have the suffix "Pokemon"
 PokeText: ; unreferenced

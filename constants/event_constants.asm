@@ -222,13 +222,7 @@
 
 ; Route 1 events
 	const_next $3C0
-<<<<<<< Updated upstream
 	const EVENT_GOT_POTION_SAMPLE
-=======
-	const_skip 2
-	const EVENT_GOT_POTION_SAMPLE
-	const EVENT_BEAT_ROUTE_1_TRAINER_0
->>>>>>> Stashed changes
 
 ; Route 2 events
 	const_next $3D8
@@ -533,10 +527,14 @@
 
 ; Viridian Forest events
 	const_next $560
-	const_skip 2
-	const EVENT_BEAT_VIRIDIAN_FOREST_TRAINER_0
-	const EVENT_BEAT_VIRIDIAN_FOREST_TRAINER_1
-	const EVENT_BEAT_VIRIDIAN_FOREST_TRAINER_2
+	const EVENT_ENTERED_VIRIDIAN_FOREST
+	const EVENT_VIRIDIAN_FOREST_ROCKET_CINEMATIC_DONE ; bit 1 - cinematic played
+	const EVENT_BEAT_VIRIDIAN_FOREST_TRAINER_0  ; bit 2 - trainer index 0
+	const EVENT_BEAT_VIRIDIAN_FOREST_TRAINER_1  ; bit 3 - trainer index 1
+	const EVENT_BEAT_VIRIDIAN_FOREST_TRAINER_2  ; bit 4 - trainer index 2
+	const EVENT_BEAT_VIRIDIAN_FOREST_BEAUTY_0   ; bit 5 - trainer index 3
+	const EVENT_BEAT_VIRIDIAN_FOREST_BEAUTY_1   ; bit 6 - trainer index 4
+	const EVENT_BEAT_VIRIDIAN_FOREST_ROCKET_LEADER ; bit 7 - trainer index 5
 
 ; Mt. Moon events
 	const_next $570

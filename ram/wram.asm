@@ -1932,12 +1932,7 @@ wPalletTownCurScript:: db
 	ds 1
 wBluesHouseCurScript:: db
 wViridianCityCurScript:: db
-<<<<<<< Updated upstream
 	ds 2
-=======
-wRoute1CurScript:: db
-	ds 1
->>>>>>> Stashed changes
 wPewterCityCurScript:: db
 wRoute3CurScript:: db
 wRoute4CurScript:: db

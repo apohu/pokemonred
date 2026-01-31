@@ -216,6 +216,12 @@ ToggleableObjectStates:
 	toggle_object_state VIRIDIANFOREST_ANTIDOTE,  ON
 	toggle_object_state VIRIDIANFOREST_POTION,    ON
 	toggle_object_state VIRIDIANFOREST_POKE_BALL, ON
+	toggle_object_state VIRIDIANFOREST_ROCKET_LEADER, ON
+	toggle_object_state VIRIDIANFOREST_BEAUTY_1, ON
+	toggle_object_state VIRIDIANFOREST_BEAUTY_2, ON
+	toggle_object_state VIRIDIANFOREST_BEAUTY_3, ON
+	toggle_object_state VIRIDIANFOREST_BEAUTY_4, ON
+	toggle_object_state VIRIDIANFOREST_BEAUTY_5, ON
 
 	toggleable_objects_for MT_MOON_1F
 	toggle_object_state MTMOON1F_POTION1,      ON

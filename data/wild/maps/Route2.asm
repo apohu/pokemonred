@@ -4,7 +4,6 @@ Route2WildMons:
 	db  3, PIDGEY
 	db  4, PIDGEY
 	db  4, RATTATA
-<<<<<<< Updated upstream
 	db  5, PIDGEY
 IF DEF(_RED)
 	db  3, WEEDLE
@@ -20,16 +19,6 @@ IF DEF(_BLUE)
 	db  4, CATERPIE
 	db  5, CATERPIE
 ENDC
-=======
-	db  3, CATERPIE
-	db  3, WEEDLE
-	db  5, PIDGEY
-	db  5, PIDGEY
-	db  5, RATTATA
-	db  5, MANKEY
-	db  8, PIDGEOTTO
-	db  5, PIKACHU
->>>>>>> Stashed changes
 	end_grass_wildmons
 
 	def_water_wildmons 0 ; encounter rate

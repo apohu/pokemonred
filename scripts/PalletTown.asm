@@ -214,7 +214,6 @@ PalletTownPlayersHouseSignText:
 
 PalletTownRivalsHouseSignText:
 	text_far _PalletTownRivalsHouseSignText
-<<<<<<< Updated upstream
 	text_end
 
 PalletTownTrainerHeaders:
@@ -245,6 +244,4 @@ PalletTownYoungsterEndBattleText:
 
 PalletTownYoungsterAfterBattleText:
 	text_far _PalletTownYoungsterAfterBattleText
-=======
->>>>>>> Stashed changes
 	text_end

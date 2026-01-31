@@ -8,19 +8,11 @@ Route1_Object:
 	def_warp_events
 
 	def_bg_events
-<<<<<<< Updated upstream
 	bg_event  9, 27, TEXT_ROUTE1_SIGN
-=======
-	bg_event  9, 27, 4
->>>>>>> Stashed changes
 
 	def_object_events
 	object_event  5, 24, SPRITE_YOUNGSTER, WALK, UP_DOWN, TEXT_ROUTE1_YOUNGSTER1
 	object_event 15, 13, SPRITE_YOUNGSTER, WALK, LEFT_RIGHT, TEXT_ROUTE1_YOUNGSTER2
-<<<<<<< Updated upstream
-=======
-	object_event 10, 20, SPRITE_YOUNGSTER, STAY, DOWN, TEXT_PALLETTOWN_YOUNGSTER, OPP_YOUNGSTER, 13
->>>>>>> Stashed changes
 
 	def_warps_to ROUTE_1
 
