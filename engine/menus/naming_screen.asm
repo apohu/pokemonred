@@ -88,11 +88,8 @@ DisplayNamingScreen:
 	call GBPalWhiteOutWithDelay3
 	call ClearScreen
 	call UpdateSprites
-
-	; HAX: Use command $0f instead of $08
-	ld b, SET_PAL_NAMING_SCREEN
+	ld b, SET_PAL_GENERIC
 	call RunPaletteCommand
-
 	call LoadHpBarAndStatusTilePatterns
 	call LoadEDTile
 	farcall LoadMonPartySpriteGfx
@@ -234,10 +231,10 @@ DisplayNamingScreen:
 	ld [wNamingScreenLetter], a
 	call CalcStringLength
 	ld a, [wNamingScreenLetter]
-	cp $e5 ; dakuten (Japanese, unused in FR)
+	cp 'ﾞ'
 	ld de, Dakutens
 	jr z, .dakutensAndHandakutens
-	cp $e4 ; handakuten (Japanese, unused in FR)
+	cp 'ﾟ'
 	ld de, Handakutens
 	jr z, .dakutensAndHandakutens
 	ld a, [wNamingScreenType]
@@ -327,11 +324,13 @@ DisplayNamingScreen:
 	jp EraseMenuCursor
 
 LoadEDTile:
-	ld de, ED_Tile
-	ld hl, vFont tile $70
-	; BUG: BANK("Home") should be BANK(ED_Tile), although it coincidentally works as-is
-	lb bc, BANK("Home"), (ED_TileEnd - ED_Tile) / TILE_1BPP_SIZE
-	jp CopyVideoDataDouble
+	call DisableLCD
+	ld de, vFont tile $70
+	ld hl, ED_Tile
+	ld bc, ED_TileEnd - ED_Tile
+	ld a, BANK(ED_Tile)
+	call FarCopyDataDouble
+	jp EnableLCD
 
 ED_Tile:
 	INCBIN "gfx/font/ED.1bpp"
@@ -458,10 +457,10 @@ PrintNamingText:
 	ld a, [wNamingScreenType]
 	ld de, YourTextString
 	and a
-	jr z, .notNickname
+	jr z, .placeString
 	ld de, RivalsTextString
 	dec a
-	jr z, .notNickname
+	jr z, .placeString
 	ld a, [wCurPartySpecies]
 	ld [wMonPartySpriteSpecies], a
 	push af
@@ -471,28 +470,21 @@ PrintNamingText:
 	call GetMonName
 	hlcoord 4, 1
 	call PlaceString
-	ld hl, $1
-	add hl, bc
-	ld [hl], $c9 ; leftover from Japanese version; blank tile in English/French
 	hlcoord 1, 3
 	ld de, NicknameTextString
 	jr .placeString
-.notNickname
-	call PlaceString
-	ld l, c
-	ld h, b
-	ld de, NameTextString
+
 .placeString
 	jp PlaceString
 
 YourTextString:
-	db "YOUR @"
+	db "VOTRE NOM?@"
 
 RivalsTextString:
-	db "RIVAL's @"
+	db "NOM DU RIVAL?@"
 
 NameTextString:
-	db "NAME?@"
+	db "NOM?@"
 
 NicknameTextString:
-	db "NICKNAME?@"
+	db "SURNOM?@"
