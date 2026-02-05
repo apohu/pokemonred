@@ -10,7 +10,6 @@ PokemonMansion3FWildMons:
 	db 36, MAGMAR
 	db 42, RAPIDASH
 	db 42, ARCANINE
-ENDC
 	end_grass_wildmons
 
 	def_water_wildmons 0 ; encounter rate

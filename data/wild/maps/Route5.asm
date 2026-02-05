@@ -7,6 +7,7 @@ Route5WildMons:
 	db 12, GROWLITHE
 	db 12, VULPIX
 	db 16, ODDISH
+	db 16, BELLSPROUT
 	db 15, CLEFAIRY
 	db 18, CLEFABLE
 	end_grass_wildmons

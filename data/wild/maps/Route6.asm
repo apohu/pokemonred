@@ -9,9 +9,10 @@ Route6WildMons:
 	db 16, ODDISH
 	db 16, PIDGEY
 	db 14, MANKEY
+	db 14, MANKEY
 	end_grass_wildmons
 
-	def_water_wildmons 0 ; encounter rate
+	def_water_wildmons 15 ; encounter rate
 	db 18, PSYDUCK
 	db 18, PSYDUCK
 	db 19, SHELLDER

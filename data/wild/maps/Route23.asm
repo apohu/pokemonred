@@ -7,6 +7,7 @@ Route23WildMons:
 	db 38, PRIMEAPE
 	db 38, PERSIAN
 	db 35, POLIWHIRL
+	db 35, POLIWHIRL
 	db 40, RAPIDASH
 	db 42, KANGASKHAN
 	end_grass_wildmons

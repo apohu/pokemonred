@@ -10,7 +10,6 @@ Route12WildMons:
 	db 27, PIDGEOTTO
 	db 28, GLOOM
 	db 28, WEEPINBELL
-ENDC
 	end_grass_wildmons
 
 	def_water_wildmons 0 ; encounter rate

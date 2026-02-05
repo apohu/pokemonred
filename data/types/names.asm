@@ -23,6 +23,7 @@ ENDR
 	dw .Psychic
 	dw .Ice
 	dw .Dragon
+	dw .Fairy
 
 	assert_table_length NUM_TYPES
 

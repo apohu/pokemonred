@@ -10,7 +10,6 @@ PokemonMansion1FWildMons:
 	db 35, PONYTA
 	db 39, WEEZING
 	db 39, MUK
-ENDC
 	end_grass_wildmons
 
 	def_water_wildmons 0 ; encounter rate

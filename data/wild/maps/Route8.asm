@@ -10,7 +10,6 @@ Route8WildMons:
 	db 17, GROWLITHE
 	db 15, DITTO
 	db 18, EEVEE
-ENDC
 	end_grass_wildmons
 
 	def_water_wildmons 0 ; encounter rate

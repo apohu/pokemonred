@@ -10,7 +10,6 @@ Route7WildMons:
 	db 12, ABRA
 	db 14, ABRA
 	db 18, EEVEE
-ENDC
 	end_grass_wildmons
 
 	def_water_wildmons 0 ; encounter rate
