@@ -103,16 +103,11 @@ StatusScreen:
 	push af
 	xor a
 	ldh [hTileAnimations], a
-IF GEN_2_GRAPHICS
-	hlcoord 19, 3
-	lb bc, 2, 8
-ELSE
 	hlcoord 19, 1
 	lb bc, 6, 10
-ENDC
 	call DrawLineBox ; Draws the box around name, HP and status
-	hlcoord 2, 7
-	nop
+	ld de, -6
+	add hl, de
 	ld [hl], '<DOT>'
 	dec hl
 	ld [hl], '№'
@@ -127,7 +122,7 @@ ENDC
 	ld hl, wStatusScreenHPBarColor
 	call GetHealthBarColor
 	ld b, SET_PAL_STATUS_SCREEN
-	call StatusScreenHook ; HAX: Draws EXP bar if GEN_2_GRAPHICS is set
+	call RunPaletteCommand
 	hlcoord 16, 6
 	ld de, wLoadedMonStatus
 	call PrintStatusCondition
@@ -210,12 +205,12 @@ NamePointers2:
 TypesIDNoOTText:
 	db   "TYPE1/"
 	next "TYPE2/"
-	next "<ID>№/"
-	next "OT/"
+	next "№<ID>/"
+	next "DO/"
 	next "@"
 
 StatusText:
-	db "STATUS/@"
+	db "STATUT/@"
 
 OKText:
 	db "OK@"
@@ -286,10 +281,10 @@ PrintStatsBox:
 	ret
 
 .StatsText:
-	db   "ATTACK"
-	next "DEFENSE"
-	next "SPEED"
-	next "SPECIAL@"
+	db   "FOR"
+	next "DEF"
+	next "VIT"
+	next "SPE@"
 
 StatusScreen2:
 	ldh a, [hTileAnimations]
@@ -308,14 +303,8 @@ StatusScreen2:
 	hlcoord 9, 2
 	lb bc, 5, 10
 	call ClearScreenArea ; Clear under name
-IF GEN_2_GRAPHICS
-	call StatusScreen2Hook
-	nop
-	nop
-ELSE
 	hlcoord 19, 3
 	ld [hl], $78
-ENDC
 	hlcoord 0, 8
 	ld b, 8
 	ld c, 18
@@ -331,7 +320,7 @@ ENDC
 	ld b, a ; number of blank moves
 	hlcoord 11, 10
 	ld de, SCREEN_WIDTH * 2
-	ld a, '<BOLD_P>'
+	ld a, 'P'
 	call StatusScreen_PrintPP ; Print "PP"
 	ld a, b
 	and a
@@ -469,8 +458,8 @@ CalcExpToLevelUp:
 	ret
 
 StatusScreenExpText:
-	db   "EXP POINTS"
-	next "LEVEL UP@"
+	db   "PTS EXP."
+	next "PROCH.NIV.@"
 
 StatusScreen_ClearName:
 	ld bc, NAME_LENGTH - 1
@@ -484,4 +473,14 @@ StatusScreen_PrintPP:
 	add hl, de
 	dec c
 	jr nz, StatusScreen_PrintPP
+	ret
+
+StatusScreen_PrintAP:
+	ld a, 'A'
+	ld [hli],a
+	ld a, 'P'
+	ldd [hl], a
+	add hl, de
+	dec c
+	jr nz, StatusScreen_PrintAP
 	ret
