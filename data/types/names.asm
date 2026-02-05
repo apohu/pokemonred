@@ -10,6 +10,7 @@ TypeNames:
 	dw .Bird
 	dw .Bug
 	dw .Ghost
+	dw .Fairy
 
 REPT UNUSED_TYPES_END - UNUSED_TYPES
 	dw .Normal
