@@ -8,7 +8,7 @@ RockTunnel1FWildMons:
 	db 18, ZUBAT
 	db 15, ZUBAT
 	db 17, MACHOP
-	db 13, ONIX
+	db 15, DROWZEE
 	db 15, ONIX
 	end_grass_wildmons
 
