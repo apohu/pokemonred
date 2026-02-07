@@ -51,3 +51,7 @@ For other pret projects, see [pret.github.io](https://pret.github.io/).
 
 # SCÉNARIO
 - Invasion Rocket dans la Forêt de Jade
+
+
+# TODO
+nvelle entrée pokedex en système métrique US, à corriger
